@@ -44,6 +44,10 @@ def get_data(stock_list):
 
 result = get_data(stock_list)
 
+st.write(result)
+
+st.write('---')
+
 fig = plt.figure()
 ax = fig.add_subplot(111)
 
