@@ -44,8 +44,10 @@ def get_data(stock_list):
 
 result = get_data(stock_list)
 
-st.write(result)
+pd.set_option('display.html.table_schema', True)
+pd.set_option('display.max_colwidth', -1)
 
+st.write("### 各企業PBR",result)
 st.write('---')
 
 fig = plt.figure()
