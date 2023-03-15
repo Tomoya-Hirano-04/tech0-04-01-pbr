@@ -9,6 +9,23 @@ import re
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 
+st.title('PBR分析アプリ')
+
+st.write('### PBR（Price Book-value Ratio)とは ###')
+st.write(""" 株価が割安か割高かを判断するための指標で、株価純資産倍率といいます。\n
+純資産から見た｢株価の割安性｣が示されるため、以下のように判断することができます。\n
+『PBRが１より低い』＝市場価格が純資産と比較して安い\n
+『PBRが１より高い』＝市場価格が純資産と比較して高い\n
+""")
+
+link = "https://quote.jpx.co.jp/jpx/template/quote.cgi?F=tmp/stock_search"
+
+def open_link(link):
+    webbrowser.open_new_tab(link)
+
+if st.button('株式番号の検索はこちら'):
+    open_link(link)
+
 stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,1301,7203')
 stock_list = [int(stock) for stock in stock_list.split(',')]
 
@@ -24,7 +41,7 @@ def get_data(stock_list):
 
         company_name = soup.find_all('p',{'class': 'md_stockBoard_stockName'})[0].text
         daily_date = soup.find_all('td', {'class': 'tal'})[0].text
-        daily_valuation = soup.find_all('td', {'class': 'num'})[3].text
+        daily_valuation = soup.find_all('td', {'class': 'num'})[2].text
 
         try:
             daily_valuation = float(soup.find_all('td', {'class': 'num'})[3].text)
