@@ -55,10 +55,9 @@ colors = [cmap(i) for i in range(len(pbr))]
 
 ax.bar(xpos, pbr, color=colors)
 ax.set(xticks=xpos, xticklabels=result['企業名'] )
-plt.xlabel('企業名', fontsize = 14)
+plt.xlabel('企業名')
 
 #y軸の範囲を設定
 ax.set_ylim(bottom=0, top=result['PBR'].astype(float).max() + 0.5) 
 
 st.pyplot(fig)
-import japanize_matplotlib
