@@ -9,8 +9,6 @@ import re
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 
-st.markdown('<style>body{font-family: "MS Gothic";}</style>', unsafe_allow_html=True)
-
 stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,1301,7203')
 stock_list = [int(stock) for stock in stock_list.split(',')]
 
