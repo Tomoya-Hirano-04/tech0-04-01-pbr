@@ -8,6 +8,7 @@ import streamlit as st
 import re
 import matplotlib.pyplot as plt
 import japanize_matplotlib
+import webbrowser
 
 st.title('PBR分析アプリ')
 
