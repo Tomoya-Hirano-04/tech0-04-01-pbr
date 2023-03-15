@@ -60,4 +60,6 @@ plt.xlabel('企業名', fontsize = 14)
 #y軸の範囲を設定
 ax.set_ylim(bottom=0, top=result['PBR'].astype(float).max() + 0.5) 
 
+import japanize_matplotlib
+
 st.pyplot(fig)
