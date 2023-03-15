@@ -7,6 +7,8 @@ from datetime import timedelta
 import streamlit as st
 import re
 import matplotlib.pyplot as plt
+import japanize_matplotlib
+
 plt.rcParams['font.family'] = 'MS Gothic'
 st.markdown('<style>body{font-family: "MS Gothic";}</style>', unsafe_allow_html=True)
 
