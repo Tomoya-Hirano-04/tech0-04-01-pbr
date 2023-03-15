@@ -46,6 +46,7 @@ result = get_data(stock_list)
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
+plt.rcParams['font.family'] = 'MS Gothic'
 
 pbr = result['PBR'].astype(float)  # PBR
 xpos = np.arange(len(pbr))  
