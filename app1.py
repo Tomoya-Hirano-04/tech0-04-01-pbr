@@ -7,6 +7,7 @@ from datetime import timedelta
 import streamlit as st
 import re
 import matplotlib.pyplot as plt
+st.set_option('deprecation.showPyplotGlobalUse', False)
 plt.rcParams['font.family'] = 'MS Gothic'
 
 stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,1301,7203')
