@@ -9,7 +9,6 @@ import re
 import matplotlib.pyplot as plt
 import japanize_matplotlib
 
-plt.rcParams['font.family'] = 'MS Gothic'
 st.markdown('<style>body{font-family: "MS Gothic";}</style>', unsafe_allow_html=True)
 
 stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,1301,7203')
@@ -58,7 +57,6 @@ colors = [cmap(i) for i in range(len(pbr))]
 
 ax.bar(xpos, pbr, color=colors)
 ax.set(xticks=xpos, xticklabels=result['企業名'])
-ax.set_xticklabels(result['企業名'], fontname = 'MS Gothic')
 
 #y軸の範囲を設定
 ax.set_ylim(bottom=0, top=result['PBR'].astype(float).max() + 0.5) 
