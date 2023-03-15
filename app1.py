@@ -41,7 +41,7 @@ def get_data(stock_list):
 
         company_name = soup.find_all('p',{'class': 'md_stockBoard_stockName'})[0].text
         daily_date = soup.find_all('td', {'class': 'tal'})[0].text
-        daily_valuation = soup.find_all('td', {'class': 'num'})[2].text
+        daily_valuation = soup.find_all('td', {'class': 'num'})[1].text
 
         try:
             daily_valuation = float(soup.find_all('td', {'class': 'num'})[3].text)
