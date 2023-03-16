@@ -19,15 +19,12 @@ st.write(""" 株価が割安か割高かを判断するための指標で、株�
 『PBRが１より高い』＝市場価格が純資産と比較して高い\n
 """)
 
-link = "https://quote.jpx.co.jp/jpx/template/quote.cgi?F=tmp/stock_search"
-
-def open_link(link):
-    webbrowser.open_new_tab(link)
+link = "[株式番号の検索はこちら](https://quote.jpx.co.jp/jpx/template/quote.cgi?F=tmp/stock_search)"
 
 if st.button('株式番号の検索はこちら'):
-    open_link(link)
+    webbrowser.open_new_tab(link)
 
-st.markdown(f"株式番号の検索は[こちら]({link})")
+st.markdown(link, unsafe_allow_html=True)
 
 stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,1301,7203')
 stock_list = [int(stock) for stock in stock_list.split(',')]
