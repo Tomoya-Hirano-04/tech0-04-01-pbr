@@ -27,6 +27,8 @@ def open_link(link):
 if st.button('株式番号の検索はこちら'):
     open_link(link)
 
+st.markdown(f"株式番号の検索は[こちら]({link})")
+
 stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,1301,7203')
 stock_list = [int(stock) for stock in stock_list.split(',')]
 
