@@ -7,6 +7,7 @@ from datetime import timedelta
 import streamlit as st
 import re
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 import japanize_matplotlib
 import webbrowser
 
@@ -71,8 +72,10 @@ xpos = np.arange(len(pbr))
 cmap = plt.cm.get_cmap('Set3', len(pbr))
 colors = [cmap(i) for i in range(len(pbr))]
 
-ax.bar(xpos, pbr, color=colors)
+ax.bar(xpos, pbr, color=colors, align='center')
 ax.set(xticks=xpos, xticklabels=result['企業名'] )
+ax.xaxis.set_major_locator(ticker.AutoLocator())
+ax.xaxis.set_major_formatter(ticker.AutoFormatter())
 plt.xticks(rotation=90)
 plt.xlabel('企業名')
 
