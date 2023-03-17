@@ -75,7 +75,6 @@ colors = [cmap(i) for i in range(len(pbr))]
 ax.bar(xpos, pbr, color=colors, align='center')
 ax.set(xticks=xpos, xticklabels=result['企業名'] )
 ax.xaxis.set_major_locator(ticker.AutoLocator())
-ax.xaxis.set_major_formatter(ticker.AutoFormatter())
 plt.xticks(rotation=90)
 plt.xlabel('企業名')
 
