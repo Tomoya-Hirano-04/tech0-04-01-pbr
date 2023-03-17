@@ -21,7 +21,7 @@ st.write(""" 株価が割安か割高かを判断するための指標で、株�
 
 st.markdown('[株式番号の検索はこちら](https://quote.jpx.co.jp/jpx/template/quote.cgi?F=tmp/stock_search)')
 
-stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,1301,7203')
+stock_list = st.text_input('株式番号を入力してください（カンマ区切りで複数指定可）', '2201,2269,2206,2229,7203')
 stock_list = [int(stock) for stock in stock_list.split(',')]
 
 @st.cache_data
