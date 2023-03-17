@@ -73,6 +73,7 @@ colors = [cmap(i) for i in range(len(pbr))]
 
 ax.bar(xpos, pbr, color=colors)
 ax.set(xticks=xpos, xticklabels=result['企業名'] )
+plt.xticks(rotation=90)
 plt.xlabel('企業名')
 
 #y軸の範囲を設定
